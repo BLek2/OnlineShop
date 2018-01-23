@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/CSS/layoutCSS.css" rel="stylesheet" />
+    <script src="script.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+    <div id="header"><h1>Z-Shop</h1></div>
+    <div id="sidebar">
+        <h3 id="Catalog">Catalog</h3>
+        <p>@Html.ActionLink("Laptops", "Laptops", "Home")</p>
+        <p>@Html.ActionLink("PC", "PC","Home")</p>
+        <p>@Html.ActionLink("Smartphones", "Smartphones", "Home")</p>
+        <p>@Html.ActionLink("Tablets", "Tablets","Home")</p>
+        <p>@Html.ActionLink("Consoles", "Consoles","Home")</p>
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
+    <div id="footer">&copy;  2018 - Vinnitsia. Online shop Z-Shop</div>
+
+</body>
+</html>
