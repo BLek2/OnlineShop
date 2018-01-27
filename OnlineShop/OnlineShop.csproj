@@ -106,18 +106,19 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Console.cs" />
-    <Compile Include="Models\Laptop.cs" />
-    <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\OnlineShopContext.cs" />
-    <Compile Include="Models\PC.cs" />
-    <Compile Include="Models\Smartphone.cs" />
-    <Compile Include="Models\Tablet.cs" />
+    <Compile Include="Models\ProductModels\Console.cs" />
+    <Compile Include="Models\ProductModels\Laptop.cs" />
+    <Compile Include="Models\ProductModels\PC.cs" />
+    <Compile Include="Models\ProductModels\Smartphone.cs" />
+    <Compile Include="Models\ProductModels\Tablet.cs" />
+    <Compile Include="Models\TemporaryModels\Login.cs" />
     <Compile Include="Models\TemporaryModels\Register.cs" />
+    <Compile Include="Models\UserModels\Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +133,7 @@
     <Content Include="Views\Home\Smartphones.cshtml" />
     <Content Include="Views\Home\Tablets.cshtml" />
     <Content Include="Views\Home\Consoles.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

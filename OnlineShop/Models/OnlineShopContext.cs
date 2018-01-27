@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
-
+using OnlineShop.Models;
+ 
 namespace OnlineShop.Models
 {
     public class OnlineShopContext:DbContext
@@ -17,6 +18,6 @@ namespace OnlineShop.Models
         public DbSet<Tablet> Tablets { get; set; }
         public DbSet<Manager> Managers { get; set; }
 
-      
+
     }
 }
