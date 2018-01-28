@@ -1,4 +1,4 @@
-﻿
+﻿@model OnlineShop.Models.TemporaryModels.Login
 @{
     Layout = null;
 }
@@ -11,6 +11,33 @@
     <title>Login</title>
 </head>
 <body>
- 
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+
+        <div>
+            <div>
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.Name)
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div>
+                @Html.EditorFor(model => model.Password)
+            </div>
+        </div>
+    
+        <input type="submit" value="Sign in"/>
+       <p>
+           @Html.ActionLink("Register", "Account","Create new manager")
+       </p>
+    }
+  
+
+
 </body>
 </html>

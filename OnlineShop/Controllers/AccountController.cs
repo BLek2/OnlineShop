@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OnlineShop.Models.TemporaryModels;
+using OnlineShop.Models.TemplateModels;
 
 namespace OnlineShop.Controllers
 {
@@ -17,6 +18,16 @@ namespace OnlineShop.Controllers
         }
         [HttpPost]
         public ActionResult Login(Login login)
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Register(Register register)
         {
             return View();
         }

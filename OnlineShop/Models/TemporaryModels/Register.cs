@@ -26,6 +26,10 @@ namespace OnlineShop.Models.TemplateModels
         [MinLength(4, ErrorMessage = "Min value is 4")]
         [DataType(DataType.Password)]
         public string RepeatPassword { get; set; }
+        [Required(ErrorMessage ="The field is required")]
+        [MaxLength(20,ErrorMessage = "The secreat combination must be between 3 and 20 symbols")]
+        [MinLength(3,ErrorMessage ="The secreat combination must be between 3 and 20 symbols")]
+        public string SecreatCombination { get; set; }
         public DateTime DatimeRegister { get; set; }
 
     }
