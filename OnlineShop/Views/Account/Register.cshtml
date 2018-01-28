@@ -1,4 +1,4 @@
-﻿
+﻿@model OnlineShop.Models.TemplateModels.Register
 @{
     Layout = null;
 }
@@ -11,7 +11,52 @@
     <title>Register</title>
 </head>
 <body>
-    <div> 
+   @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+   {
+       <div>
+       <div>
+           @Html.LabelFor(model=>model.Name)
+       </div>
+       <div>
+           @Html.EditorFor(model=>model.Name)
+       </div>
+       </div>
+
+    <div>
+        <div>
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Email)
+        </div>
     </div>
+
+    <div>
+        <div>
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Password)
+        </div>
+    </div>
+    <div>
+        <div>
+            @Html.LabelFor(model => model.RepeatPassword)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.RepeatPassword)
+        </div>
+    </div>
+    <div>
+        <div>
+            @Html.LabelFor(model => model.SecreatCombination)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.SecreatCombination)
+        </div>
+    </div>
+
+    <input type="submit" value="Create"/>
+   }
 </body>
 </html>
