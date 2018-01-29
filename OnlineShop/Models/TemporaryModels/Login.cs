@@ -13,6 +13,7 @@ namespace OnlineShop.Models.TemporaryModels
         public string Name { get; set; }
         [Required(ErrorMessage = "The field is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "The string must be between 50 and 3 symbols")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

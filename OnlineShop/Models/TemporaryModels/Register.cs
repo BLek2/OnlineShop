@@ -25,6 +25,7 @@ namespace OnlineShop.Models.TemplateModels
         [MaxLength(50, ErrorMessage = "Max value is 50")]
         [MinLength(4, ErrorMessage = "Min value is 4")]
         [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage ="Passwords are not equal")]
         public string RepeatPassword { get; set; }
         [Required(ErrorMessage ="The field is required")]
         [MaxLength(20,ErrorMessage = "The secreat combination must be between 3 and 20 symbols")]

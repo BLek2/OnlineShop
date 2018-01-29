@@ -1,0 +1,41 @@
+﻿body {
+    background-color: #d8ffeb;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+}
+
+a:hover {
+        color: #000000;
+}
+
+.editor-label label {
+    font-size: 20px;
+    font-family: Verdana;
+}
+
+.editor-field input {
+    width: 200px;
+    height: 20px;
+    font-size: 20px;
+    border: 1px solid #a3a2a2;
+}
+
+.editor-field input:hover {
+        border: 1px solid #73d5ef;
+}
+
+#submit {
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    background-color: deepskyblue;
+    border: 1px solid deepskyblue;
+}
+
+#submit:hover {
+        border: 1px solid #000000;
+        cursor: pointer;
+ }
