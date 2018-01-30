@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using OnlineShop.Models;
- 
+using OnlineShop.Models.AnotherModels;
+
 namespace OnlineShop.Models
 {
     public class OnlineShopContext:DbContext
@@ -16,7 +17,9 @@ namespace OnlineShop.Models
         public DbSet<PC> PCS { get; set; }
         public DbSet<Smartphone> Smartphones { get; set; }
         public DbSet<Tablet> Tablets { get; set; }
+        public DbSet<SecreatCombinations> SecreatCombinations { get; set; }
         public DbSet<Manager> Managers { get; set; }
+        
 
 
     }
