@@ -23,6 +23,36 @@ namespace OnlineShop.Controllers
         [HttpPost]
         public ActionResult Login(Login login)
         {
+            IEnumerable<Manager> managers = DbOnlineShop.Managers;
+
+            if (string.IsNullOrEmpty(login.Name))
+            {
+                ModelState.AddModelError("Name", "The field is required");
+            }
+            else if(login.Name.Length < 3 || login.Name.Length > 50)
+            {
+                ModelState.AddModelError("Name", "The string must be between 50 and 3 symbols");
+            }
+
+            if (string.IsNullOrEmpty(login.Password))
+            {
+                ModelState.AddModelError("Password", "The field is required");
+            }
+            else if(login.Password.Length < 3 || login.Password.Length > 50)
+            {
+                ModelState.AddModelError("Password", "The string must be between 50 and 3 symbols");
+            }
+
+            foreach(var b in managers)
+            {
+                if(login.Name == b.Name && login.Password == b.Password)
+                {
+                    //Code for true authentification
+                }
+            }
+
+            
+
             return View();
         }
         [HttpGet]
