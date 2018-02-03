@@ -8,6 +8,7 @@ using OnlineShop.Models.TemplateModels;
 using OnlineShop.Models;
 using System.Text.RegularExpressions;
 using OnlineShop.Models.AnotherModels;
+using System.Collections.ObjectModel;
 
 namespace OnlineShop.Controllers
 {
@@ -23,13 +24,15 @@ namespace OnlineShop.Controllers
         [HttpPost]
         public ActionResult Login(Login login)
         {
-            IEnumerable<Manager> managers = DbOnlineShop.Managers;
+            
+            IQueryable<Manager> managers = DbOnlineShop.Managers;
 
             if (string.IsNullOrEmpty(login.Name))
             {
                 ModelState.AddModelError("Name", "The field is required");
+                
             }
-            else if(login.Name.Length < 3 || login.Name.Length > 50)
+            else if(login.Name.Length < 3  || login.Name.Length > 50 )
             {
                 ModelState.AddModelError("Name", "The string must be between 50 and 3 symbols");
             }
@@ -38,22 +41,25 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("Password", "The field is required");
             }
-            else if(login.Password.Length < 3 || login.Password.Length > 50)
+            else if(login.Password.Length < 3  || login.Password.Length > 50 )
             {
                 ModelState.AddModelError("Password", "The string must be between 50 and 3 symbols");
             }
-
-            foreach(var b in managers)
+            
+            foreach (var b in managers)
             {
                 if(login.Name == b.Name && login.Password == b.Password)
                 {
-                    //Code for true authentification
+              
+                    Session["Manager"] = login.Name;
+
+                    return RedirectToAction("Room", "Admin");
                 }
             }
 
-            
 
-            return View();
+
+            return View(login);
         }
         [HttpGet]
         public ActionResult Register()
@@ -92,11 +98,11 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("Password", "The field is required");
             }
-            else if (register.Password.Length < 4)
+            else if (register.Password.Length < 4 == true)
             {
                 ModelState.AddModelError("Password", "Min value is 4");
             }
-            else if(register.Password.Length > 50)
+            else if(register.Password.Length > 50 == true)
             {
                 ModelState.AddModelError("Password", "Max value is 50");
             }
@@ -115,12 +121,12 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("RepeatPassword", "Max value is 50");
             }
-            else if(register.Password == register.RepeatPassword)
+            else if(register.Password != register.RepeatPassword)
             {
                 ModelState.AddModelError("Password", "Passwords are not equal");
                 ModelState.AddModelError("RepeatPassword", "Passwords are not equal");
             }
-
+           /*
             //SecreatCombination Validation
             bool IsRight = IssecreatCombinationRight(register);
 
@@ -136,7 +142,7 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("SecreatCombination", "The secreat combination is not right");
             }
-
+            */
 
 
             if (ModelState.IsValid)
@@ -150,10 +156,13 @@ namespace OnlineShop.Controllers
                 };
                 DbOnlineShop.Managers.Add(manager);
                 DbOnlineShop.SaveChanges();
+
+                Session["Manager"] = manager.Name;
+                return RedirectToAction("Room", "Admin");
             }
 
-          
-            return View();
+
+            return View(register);
         }
 
         public bool IssecreatCombinationRight(Register register)

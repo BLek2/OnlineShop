@@ -16,8 +16,6 @@ namespace OnlineShop.Models
         public string MainImagePath { get; set; }
         public string AnotherImagesPath { get; set; }
         [Required(ErrorMessage = "The field is required")]
-        [MinLength(1, ErrorMessage = "The min value is 1")]
-        [MaxLength(20, ErrorMessage = "The max value is 20")]
         public int CodeOfProduct { get; set; }
         [Required(ErrorMessage = "The field is required")]
         [MinLength(1, ErrorMessage = "MinValue is 1")]
