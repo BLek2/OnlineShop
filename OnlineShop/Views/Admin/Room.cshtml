@@ -11,6 +11,20 @@
     <title>Room</title>
 </head>
 <body>
-  @ViewBag.manager
+  <p>Здравствуйте, @ViewBag.manager !</p><span>@using (Html.BeginForm("SignOff", "Admin", FormMethod.Post)) { <input type="submit" value="SignOff"/> }</span>
+    <br/>
+    <br />
+    <br />
+    <br />
+  <p>Действия: </p>
+  <div>@Html.ActionLink("Add product", "AddProduct", "Admin")</div>
+  <div>@Html.ActionLink("Change secreat combination", "ChangeSecreatCombination", "Admin")</div>
+  <div>@Html.ActionLink("Show Applies", "ShowApplies", "Admin")</div>
+  <div>@Html.ActionLink("Add Manager", "AddManager", "Admin")</div>
+  <div>@Html.ActionLink("Show statistic", "ShowStatistic", "Admin")</div>
+  
+  <hr/>
+
+
 </body>
 </html>

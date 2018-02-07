@@ -23,6 +23,35 @@ namespace OnlineShop.Controllers
             }
             return RedirectToAction("Login", "Account");     
         }
+        
+        public ActionResult AddProduct()
+        {
+            return View();
+        }
+        public ActionResult ChangeSecreatCombination()
+        {
+            return View();
+        }
+        public ActionResult ShowApplies()
+        {
+            return View();
+        }
+        public ActionResult AddManager()
+        {
+            return View();
+        }
+        public ActionResult ShowStatistic()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SignOff()
+        {
+            return View();
+        }
+
+
+
         public bool IsAuthenticated()
         {
             if(Session["Manager"] == null)

@@ -57,8 +57,6 @@ namespace OnlineShop.Controllers
                 }
             }
 
-
-
             return View(login);
         }
         [HttpGet]
