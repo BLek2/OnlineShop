@@ -111,6 +111,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,6 +160,10 @@
     <Content Include="Views\Admin\ChangeSecreatCombination.cshtml" />
     <Content Include="Views\Admin\AddManager.cshtml" />
     <Content Include="Views\Admin\ShowStatistic.cshtml" />
+    <Content Include="Views\Product\Console.cshtml" />
+    <Content Include="Views\Product\Laptop.cshtml" />
+    <Content Include="Views\Product\PC.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

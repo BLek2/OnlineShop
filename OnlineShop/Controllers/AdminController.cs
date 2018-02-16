@@ -32,6 +32,10 @@ namespace OnlineShop.Controllers
         {
             return View();
         }
+        public ActionResult EditProduct()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult ChangeSecreatCombination()
         {
