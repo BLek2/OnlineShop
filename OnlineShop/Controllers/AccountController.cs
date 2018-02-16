@@ -18,7 +18,7 @@ namespace OnlineShop.Controllers
 
         [HttpGet]
         public ActionResult Login()
-        {
+        { 
             return View();
         }
         [HttpPost]

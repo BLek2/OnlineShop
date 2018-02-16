@@ -1,4 +1,4 @@
-﻿
+﻿@model OnlineShop.Models.AnotherModels.SecreatCombinations
 @{
     Layout = null;
 }
@@ -9,8 +9,28 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>ChangeSecreatCombination</title>
+    <link href="~/Content/CSS/ValidationErrorStyle.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
+    @using (Html.BeginForm("ChangeSecreatCombination", "Admin", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+        
+        <div class="editor-label">
+          @Html.LabelFor(model => model.SecreatCombination)
+        </div>
+        <br/>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SecreatCombination)
+            @Html.ValidationMessageFor(model=>model.SecreatCombination)
+        </div>
+        <br />
+
+            <input type="submit" value="ChangeSecreatCombination" />
+       }
+    <hr/>
+            @Html.ActionLink("Back", "Room", "Admin")
 
 </body>
 </html>

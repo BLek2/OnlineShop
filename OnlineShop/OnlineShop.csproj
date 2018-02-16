@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -113,6 +114,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802120759286_InitialCreate.cs" />
+    <Compile Include="Migrations\201802120759286_InitialCreate.Designer.cs">
+      <DependentUpon>201802120759286_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802152036102_Updating changesecreatcombination.cs" />
+    <Compile Include="Migrations\201802152036102_Updating changesecreatcombination.Designer.cs">
+      <DependentUpon>201802152036102_Updating changesecreatcombination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802160922089_Add validation atributes in Manager model.cs" />
+    <Compile Include="Migrations\201802160922089_Add validation atributes in Manager model.Designer.cs">
+      <DependentUpon>201802160922089_Add validation atributes in Manager model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnotherModels\SecreatCombinations.cs" />
     <Compile Include="Models\OnlineShopContext.cs" />
     <Compile Include="Models\ProductModels\Console.cs" />
@@ -155,6 +169,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\CSS\Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802120759286_InitialCreate.resx">
+      <DependentUpon>201802120759286_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802152036102_Updating changesecreatcombination.resx">
+      <DependentUpon>201802152036102_Updating changesecreatcombination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802160922089_Add validation atributes in Manager model.resx">
+      <DependentUpon>201802160922089_Add validation atributes in Manager model.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
