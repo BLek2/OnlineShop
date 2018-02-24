@@ -1,4 +1,4 @@
-﻿
+﻿@model OnlineShop.Models.Laptop
 @{
     Layout = null;
 }
@@ -9,9 +9,92 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Laptop</title>
+    <link href="~/Content/CSS/ValidationErrorStyle.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
-    <div> 
-    </div>
+    @using (Html.BeginForm("Laptop", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true)
+
+        <div>
+        <div id="editor-label">
+            @Html.LabelFor(model=>model.Title)
+        </div>
+          <br />
+        <div class="editor-field">
+            @Html.EditorFor(model=>model.Title) @Html.ValidationMessageFor(model=>model.Title)
+        </div>
+        </div>
+        <br/>
+        <div>
+            <div id="editor-label">
+                @Html.LabelFor(model => model.CodeOfProduct)
+            </div>
+         <br/>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CodeOfProduct) @Html.ValidationMessageFor(model=>model.CodeOfProduct)
+            </div>
+        </div>
+        <br />
+        <div>
+            <div id="editor-label">
+                @Html.LabelFor(model => model.Warrantly)
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Warrantly) @Html.ValidationMessageFor(model => model.Warrantly)
+            </div>
+        </div>
+        <br />
+        <div>
+            <div id="editor-label">
+                @Html.LabelFor(model => model.Price)
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Price)@Html.ValidationMessageFor(model => model.Price)
+            </div>
+        </div>
+        <br />
+        <div>
+            <div id="editor-label">
+                @Html.LabelFor(model => model.IsOnStorage)
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IsOnStorage) @Html.ValidationMessageFor(model=>model.IsOnStorage)
+            </div>
+        </div>
+        <br />
+                <div>
+                    <div id="editor-label">
+                        @Html.LabelFor(model => model.Count)
+                    </div>
+                    <br />
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Count) @Html.ValidationMessageFor(model => model.Count)
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <div id="editor-label">
+                        @Html.LabelFor(model => model.Description)
+                    </div>
+                    <br />
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Description) @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </div>
+                <div>
+                <label>Main image</label><br/>
+                <input type="file" name="mainimage" /> <br>
+                </div>
+                <br/>
+                <br />
+                <br />
+                <input type="submit" value="Add laptop"/>
+    }
+  
 </body>
 </html>

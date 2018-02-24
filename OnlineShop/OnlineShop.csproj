@@ -127,6 +127,14 @@
     <Compile Include="Migrations\201802160922089_Add validation atributes in Manager model.Designer.cs">
       <DependentUpon>201802160922089_Add validation atributes in Manager model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802211146025_Update laptop.cs" />
+    <Compile Include="Migrations\201802211146025_Update laptop.Designer.cs">
+      <DependentUpon>201802211146025_Update laptop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802211149448_Update Laptop 2.cs" />
+    <Compile Include="Migrations\201802211149448_Update Laptop 2.Designer.cs">
+      <DependentUpon>201802211149448_Update Laptop 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnotherModels\SecreatCombinations.cs" />
     <Compile Include="Models\OnlineShopContext.cs" />
@@ -174,6 +182,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\CSS\Admin\" />
+    <Folder Include="Content\Images\Console\" />
+    <Folder Include="Content\Images\Laptop\" />
+    <Folder Include="Content\Images\PC\" />
+    <Folder Include="Content\Images\Smartphone\" />
+    <Folder Include="Content\Images\Tablet\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802120759286_InitialCreate.resx">
@@ -184,6 +197,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802160922089_Add validation atributes in Manager model.resx">
       <DependentUpon>201802160922089_Add validation atributes in Manager model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802211146025_Update laptop.resx">
+      <DependentUpon>201802211146025_Update laptop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802211149448_Update Laptop 2.resx">
+      <DependentUpon>201802211149448_Update Laptop 2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

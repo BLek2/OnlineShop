@@ -105,3 +105,5 @@ C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineSh
 C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.csproj.GenerateResource.Cache
 C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.Updatingchangesecreatcombination.resources
 C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.AddvalidationatributesinManagermodel.resources
+C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.Updatelaptop.resources
+C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.UpdateLaptop2.resources
