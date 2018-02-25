@@ -135,6 +135,10 @@
     <Compile Include="Migrations\201802211149448_Update Laptop 2.Designer.cs">
       <DependentUpon>201802211149448_Update Laptop 2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802241105291_Update laptop model.cs" />
+    <Compile Include="Migrations\201802241105291_Update laptop model.Designer.cs">
+      <DependentUpon>201802241105291_Update laptop model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AnotherModels\SecreatCombinations.cs" />
     <Compile Include="Models\OnlineShopContext.cs" />
@@ -203,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802211149448_Update Laptop 2.resx">
       <DependentUpon>201802211149448_Update Laptop 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802241105291_Update laptop model.resx">
+      <DependentUpon>201802241105291_Update laptop model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

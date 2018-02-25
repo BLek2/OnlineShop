@@ -29,12 +29,13 @@ namespace OnlineShop.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Laptop(Laptop laptop, HttpPostedFileBase mainimage)
+        public ActionResult Laptop(Laptop laptop, HttpPostedFileBase mainimage,HttpPostedFileBase additionimage1, HttpPostedFileBase additionimage2, HttpPostedFileBase additionimage3)
         {
             //Title Validation
             if (String.IsNullOrEmpty(laptop.Title))
             {
                 ModelState.AddModelError("Title", "The field is required");
+
             }
             if (laptop.Title.Length < 3 || laptop.Title.Length > 250)
             {
@@ -99,19 +100,54 @@ namespace OnlineShop.Controllers
 
             //Adding images in database 
 
+            //Main image
                 string FolderName = GenerateFolderName("");
 
                 Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName));
-            
+                Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/"+ "MainImage"));
+
                 string MainImageName= System.IO.Path.GetFileName(mainimage.FileName);
-                string MainImageUrlPath = "~/Content/Images/Laptop/" + FolderName+ "/" +"MainImage/"+ MainImageName;
-                mainimage.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName +"/"+ MainImageName));
+
+                string MainImageUrlPath = "~/Content/Images/Laptop/" + FolderName+ "/" + "MainImage/" + MainImageName;
+                mainimage.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName +"/"+ "MainImage/" + MainImageName));
 
 
                 laptop.MainImagePath = MainImageUrlPath;
+            //Additional images
+            Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages"));
 
-                DbOnlineShop.Laptops.Add(laptop);
-                DbOnlineShop.SaveChanges();
+            try
+            { 
+                string addimage1Name= System.IO.Path.GetFileName(additionimage1.FileName);
+                additionimage1.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/"+ addimage1Name));
+                
+            }
+            catch (Exception)
+            {
+
+            }
+            try
+            {
+                string addimage2Name= System.IO.Path.GetFileName(additionimage2.FileName);
+                additionimage2.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/" + addimage2Name));
+            }
+            catch (Exception)
+            {
+
+            }
+            try
+            {
+                string addimage3Name = System.IO.Path.GetFileName(additionimage3.FileName);
+                additionimage3.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/" + addimage3Name));
+            }
+            catch (Exception)
+            {
+
+            }
+
+            //Adding our product into table 
+            DbOnlineShop.Laptops.Add(laptop);
+            DbOnlineShop.SaveChanges();
             
             return View(laptop);
         }
