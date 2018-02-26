@@ -10,24 +10,23 @@ namespace OnlineShop.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "The field is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "The string must be between 50 and 3 symbols")]
+        [StringLength(250, MinimumLength = 3, ErrorMessage = "The string must be between 50 and 3 symbols")]
         public string Title { get; set; }
         [Required(ErrorMessage = "The field is required")]
         public string MainImagePath { get; set; }
         public string AnotherImagesPath { get; set; }
         [Required(ErrorMessage = "The field is required")]
-        public int CodeOfProduct { get; set; }
+        public int? CodeOfProduct { get; set; }
         [Required(ErrorMessage = "The field is required")]
-        [MinLength(1, ErrorMessage = "MinValue is 1")]
-        public string Warrantly { get; set; }
+        public int? Warrantly { get; set; }
         [Required(ErrorMessage = "The field is required")]
-        [MinLength(1, ErrorMessage = "MinValue is 1")]
-        public int Price { get; set; }
+        [Range(1, 999999, ErrorMessage = "Ivalid field")]
+        public int? Price { get; set; }
         [Required(ErrorMessage = "The field is required")]
         public bool IsOnStorage { get; set; }
         [Required(ErrorMessage = "The field is required")]
-        [MinLength(0, ErrorMessage = "The min value is 0")]
-        public int Count { get; set; }
+        [Range(1, 10000, ErrorMessage = "Ivalid field")]
+        public int? Count { get; set; }
         [Required(ErrorMessage = "The field is required")]
         public string Description { get; set; }
     }

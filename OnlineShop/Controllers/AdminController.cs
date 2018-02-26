@@ -50,10 +50,6 @@ namespace OnlineShop.Controllers
                 DbOnlineShop.SecreatCombinations.Add(secreatcombination);
                 DbOnlineShop.SaveChanges();
               
-            
-
-
-
             return View();
         }
         public ActionResult ShowApplies()
@@ -116,6 +112,10 @@ namespace OnlineShop.Controllers
             return View(manager);
         }
         public ActionResult ShowStatistic()
+        {
+            return View();
+        }
+        public ActionResult InstractionAboutUsingSystem()
         {
             return View();
         }
