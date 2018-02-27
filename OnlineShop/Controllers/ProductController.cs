@@ -115,12 +115,14 @@ namespace OnlineShop.Controllers
                 laptop.MainImagePath = MainImageUrlPath;
             //Additional images
             Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages"));
-
+            laptop.AnotherImagesPath = "";
             try
-            { 
-                string addimage1Name= System.IO.Path.GetFileName(additionimage1.FileName);
-                additionimage1.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/"+ addimage1Name));
-                
+            {
+                string addimage1Name = System.IO.Path.GetFileName(additionimage1.FileName);
+
+                additionimage1.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/" + addimage1Name));
+
+                laptop.AnotherImagesPath += "~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/" + addimage1Name;
             }
             catch (Exception)
             {
@@ -129,7 +131,10 @@ namespace OnlineShop.Controllers
             try
             {
                 string addimage2Name= System.IO.Path.GetFileName(additionimage2.FileName);
+
                 additionimage2.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/" + addimage2Name));
+
+                laptop.AnotherImagesPath += "||"+"~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/"  + addimage2Name;
             }
             catch (Exception)
             {
@@ -138,7 +143,10 @@ namespace OnlineShop.Controllers
             try
             {
                 string addimage3Name = System.IO.Path.GetFileName(additionimage3.FileName);
+
                 additionimage3.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/" + addimage3Name));
+
+                laptop.AnotherImagesPath += "||" + "~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages" + "/" +  addimage3Name;
             }
             catch (Exception)
             {
