@@ -19,7 +19,7 @@ namespace OnlineShop.Models
         public DbSet<Tablet> Tablets { get; set; }
         public DbSet<SecreatCombinations> SecreatCombinations { get; set; }
         public DbSet<Manager> Managers { get; set; }
-        
+        public DbSet<Order> Orders { get; set; }
 
 
     }

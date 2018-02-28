@@ -109,3 +109,4 @@ C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineSh
 C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.UpdateLaptop2.resources
 C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.Updatelaptopmodel.resources
 C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.Updatemodels.resources
+C:\Users\Andrew Romanuk\source\Projects\OnlineShop\OnlineShop\obj\Debug\OnlineShop.Migrations.AddingnewmodelOrder.resources

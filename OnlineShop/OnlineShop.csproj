@@ -109,6 +109,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -143,7 +144,12 @@
     <Compile Include="Migrations\201802261439295_Update models.Designer.cs">
       <DependentUpon>201802261439295_Update models.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802281644242_Adding new model - Order.cs" />
+    <Compile Include="Migrations\201802281644242_Adding new model - Order.Designer.cs">
+      <DependentUpon>201802281644242_Adding new model - Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AnotherModels\Order.cs" />
     <Compile Include="Models\AnotherModels\SecreatCombinations.cs" />
     <Compile Include="Models\OnlineShopContext.cs" />
     <Compile Include="Models\ProductModels\Console.cs" />
@@ -181,6 +187,8 @@
     <Content Include="Views\Product\PC.cshtml" />
     <Content Include="Views\Admin\EditProduct.cshtml" />
     <Content Include="Views\Admin\InstractionAboutUsingSystem.cshtml" />
+    <Content Include="Views\Customer\Cart.cshtml" />
+    <Content Include="Views\Home\Laptop.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802261439295_Update models.resx">
       <DependentUpon>201802261439295_Update models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802281644242_Adding new model - Order.resx">
+      <DependentUpon>201802281644242_Adding new model - Order.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
