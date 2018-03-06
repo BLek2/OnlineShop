@@ -16,6 +16,7 @@ namespace OnlineShop.Controllers
         {
             return View();
         }
+
         public ActionResult Laptops()
         {
             IEnumerable<Laptop> laptops = onlineDb.Laptops;
@@ -23,18 +24,22 @@ namespace OnlineShop.Controllers
             ViewBag.laptops = laptops;
             return View();
         }
+
         public ActionResult PC()
         {
             return View();
         }
+
         public ActionResult Smartphones()
         {
             return View();
         }
+
         public ActionResult Tablets()
         {
             return View();
         }
+
         public ActionResult Consoles()
         {
             return View();

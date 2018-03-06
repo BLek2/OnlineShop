@@ -15,7 +15,6 @@
 <body>
     @using (Html.BeginForm("Login", "Account", FormMethod.Post))
     {
-
         @Html.ValidationSummary(true)
         <div>
             <div class="editor-label">
@@ -49,6 +48,7 @@
        <p id="LinkAbove" >
            @Html.ActionLink("OnlineShop", "Index", "Home")
        </p>
+
     }
   
 

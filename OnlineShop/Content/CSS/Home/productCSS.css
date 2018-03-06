@@ -1,0 +1,21 @@
+﻿.product {
+    padding:15px;
+
+}
+.mainImage {
+    text-align: center;
+    padding-top: 15px;
+}
+.description{
+    text-align:justify;
+    padding-top:15px;
+}
+.warrantly{
+   
+}
+.isAvailable{
+    color:#1f9d29;
+}
+.notAvailable{
+    color:#fa2020;
+}

@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CSS\Account\LoginAndRegisterCSS.css" />
+    <Content Include="Content\CSS\Home\productCSS.css" />
     <Content Include="Content\CSS\layoutCSS.css" />
     <Content Include="Content\CSS\ValidationErrorStyle.css" />
     <Content Include="Global.asax" />

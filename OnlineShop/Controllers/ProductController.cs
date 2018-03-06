@@ -17,17 +17,20 @@ namespace OnlineShop.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Console(OnlineShop.Models.Console console)
         {
 
             return View();
         }
+
         [HttpGet]
         public ActionResult Laptop()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Laptop(Laptop laptop, HttpPostedFileBase mainimage,HttpPostedFileBase additionimage1, HttpPostedFileBase additionimage2, HttpPostedFileBase additionimage3)
         {
@@ -37,6 +40,7 @@ namespace OnlineShop.Controllers
                 ModelState.AddModelError("Title", "The field is required");
 
             }
+
             if (laptop.Title.Length < 3 || laptop.Title.Length > 250)
             {
                 ModelState.AddModelError("Title", "The field is required");
@@ -49,7 +53,6 @@ namespace OnlineShop.Controllers
                 ModelState.AddModelError("CodeOfProduct", "The field is required");
             }
 
-
             //Warrantly Validation
 
             if(laptop.Warrantly == null)
@@ -57,14 +60,13 @@ namespace OnlineShop.Controllers
                 ModelState.AddModelError("Warrantly", "The field is required");
             }
 
-
-
             //Price Validation
 
             if (laptop.Price == null)
             {
                 ModelState.AddModelError("Price", "The field is required");
             }
+
             if(laptop.Price < 1 || laptop.Price > 999999)
             {
                 ModelState.AddModelError("Price", "Ivalid field");
@@ -75,6 +77,7 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("Count", "The field is required");
             }
+
             if(laptop.Count < 1 || laptop.Count > 10000)
             {
                 ModelState.AddModelError("Count", "The field is required");
@@ -97,25 +100,26 @@ namespace OnlineShop.Controllers
             }
             //AnotherImagesPath Validation
 
-
             //Adding images in database 
 
             //Main image
-                string FolderName = GenerateFolderName("");
+              string FolderName = GenerateFolderName("");
 
-                Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName));
-                Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/"+ "MainImage"));
+              Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName));
+              Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/"+ "MainImage"));
 
-                string MainImageName= System.IO.Path.GetFileName(mainimage.FileName);
+              string MainImageName= System.IO.Path.GetFileName(mainimage.FileName);
 
-                string MainImageUrlPath = "~/Content/Images/Laptop/" + FolderName+ "/" + "MainImage/" + MainImageName;
-                mainimage.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName +"/"+ "MainImage/" + MainImageName));
+              string MainImageUrlPath = "~/Content/Images/Laptop/" + FolderName+ "/" + "MainImage/" + MainImageName;
+              mainimage.SaveAs(Server.MapPath("~/Content/Images/Laptop/" + FolderName +"/"+ "MainImage/" + MainImageName));
 
-
-                laptop.MainImagePath = MainImageUrlPath;
+              laptop.MainImagePath = MainImageUrlPath;
             //Additional images
+
             Directory.CreateDirectory(Server.MapPath("~/Content/Images/Laptop/" + FolderName + "/" + "AdditionalImages"));
+
             laptop.AnotherImagesPath = "";
+
             try
             {
                 string addimage1Name = System.IO.Path.GetFileName(additionimage1.FileName);
@@ -128,6 +132,7 @@ namespace OnlineShop.Controllers
             {
 
             }
+
             try
             {
                 string addimage2Name= System.IO.Path.GetFileName(additionimage2.FileName);
@@ -140,6 +145,7 @@ namespace OnlineShop.Controllers
             {
 
             }
+
             try
             {
                 string addimage3Name = System.IO.Path.GetFileName(additionimage3.FileName);
@@ -159,37 +165,42 @@ namespace OnlineShop.Controllers
             
             return View(laptop);
         }
+
         [HttpGet]
         public ActionResult PC()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult PC(PC pC)
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult Smartphone()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Smartphone(Smartphone smartphone)
         {
             return View();
         }
+
         [HttpGet]
         public ActionResult Tablet()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Tablet(Tablet tablet)
         {
             return View();
         }
-
 
         public string GenerateFolderName(string str)
         {
@@ -199,14 +210,12 @@ namespace OnlineShop.Controllers
             Random random = new Random();
 
             for (int i = 0; i < 6; i++)
-            {
-                
+            {                
                 int randomIndex = random.Next(0, 35);
                 str += variants[randomIndex];
               
             }
             return str;
         }
-
     }
 }

@@ -5,3 +5,16 @@
 }
 
 @ViewBag.foundlaptop.Title
+<p style="text-align:center;" ><img src="@Url.Content(ViewBag.foundlaptop.MainImagePath)" /></p>
+<br/>
+<br />
+<br />
+<br />
+<p>@ViewBag.foundlaptop.Description</p>
+
+@{ 
+    string str1 = ViewBag.foundlaptop.AnotherImagesPath;
+
+    <p>@str1</p>
+
+}

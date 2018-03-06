@@ -3,15 +3,42 @@
     ViewBag.Title = "Laptops";
     Layout = "~/Views/_Layout.cshtml";
 }
+<link href="~/Content/CSS/Home/productCSS.css" type="text/css" rel="stylesheet" />
 
-@foreach(var b in ViewBag.laptops)
+
+@foreach (var b in ViewBag.laptops)
 {
-    <p>@using (Html.BeginForm("Laptop", "Home", FormMethod.Get)) { <input type="hidden" name="Id" value="@b.Id" > <input type="submit" value="@b.Title">} </p >
-    <p><img src="@Url.Content(b.MainImagePath)" /></p>
-    <p>@b.Description</p>
-  
+    <div class="product">
+    <div><a href="/Home/Laptop/@b.Id">@b.Title</a> </div >
+        <a href="/Home/Laptop/@b.Id"><div class="mainImage"><img src="@Url.Content(b.MainImagePath)" /></div></a>
+    <div class="description" >@b.Description</div>
+    <br/>
+    <br />
+    <br />
+    <div class="warrantly">Warrantly: <h4>@b.Warrantly </h4></div>
+    <div class="codeofproduct" >CodeOfProduct:  <h4>@b.CodeOfProduct</h4></div>
+    <div>@{ 
+        if (b.IsOnStorage == true)
+        {
+            <span class="isAvailable">Available in stock</span>
+        }
+        else
+        {
+            <span class="notAvailable">Not available in stock :(</span>
+        }
+
+
+    }
+    </div>
+
+        @using (Html.BeginForm("AddLaptopToCart", "Customer", FormMethod.Post))
+        {
+            <input type="hidden" name="Id" value="@b.Id"/>
+            <input type="submit" value="Add to Cart" />
+        }
 
     <hr/>
+    </div>
 
 }
 

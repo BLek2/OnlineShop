@@ -21,10 +21,10 @@ namespace OnlineShop.Controllers
         { 
             return View();
         }
+
         [HttpPost]
         public ActionResult Login(Login login)
-        {
-            
+        {   
             IQueryable<Manager> managers = DbOnlineShop.Managers;
 
             if (string.IsNullOrEmpty(login.Name))
@@ -32,6 +32,7 @@ namespace OnlineShop.Controllers
                 ModelState.AddModelError("Name", "The field is required");
                 
             }
+
             else if(login.Name.Length < 3  || login.Name.Length > 50 )
             {
                 ModelState.AddModelError("Name", "The string must be between 50 and 3 symbols");
@@ -41,6 +42,7 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("Password", "The field is required");
             }
+
             else if(login.Password.Length < 3  || login.Password.Length > 50 )
             {
                 ModelState.AddModelError("Password", "The string must be between 50 and 3 symbols");
@@ -59,16 +61,17 @@ namespace OnlineShop.Controllers
 
             return View(login);
         }
+
         [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Register(Register register)
         {
             IEnumerable<SecreatCombinations> secreatCombination = DbOnlineShop.SecreatCombinations;
-
 
             //Name Validation
 
@@ -76,30 +79,36 @@ namespace OnlineShop.Controllers
             {
                  ModelState.AddModelError("Name", "The field is required");
             }
+
             else if(register.Name.Length < 3 || register.Name.Length > 50)
             {
                 ModelState.AddModelError("Name", "The Name must be between 50 and 3 symbols");
             }
 
             //Email Validation
+
             if (string.IsNullOrEmpty(register.Email))
             {
                 ModelState.AddModelError("Email", "The field is required");
             }
+
             else if(Regex.IsMatch(register.Email, @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}") == false)
             {
                 ModelState.AddModelError("Email", "Not correct email");
             }
 
             //Password Validation
+
             if (string.IsNullOrEmpty(register.Password))
             {
                 ModelState.AddModelError("Password", "The field is required");
             }
+
             else if (register.Password.Length < 4 == true)
             {
                 ModelState.AddModelError("Password", "Min value is 4");
             }
+
             else if(register.Password.Length > 50 == true)
             {
                 ModelState.AddModelError("Password", "Max value is 50");
@@ -111,19 +120,23 @@ namespace OnlineShop.Controllers
             {
                 ModelState.AddModelError("RepeatPassword", "The field is required");
             }
+
             else if(register.RepeatPassword.Length < 4)
             {
                 ModelState.AddModelError("RepeatPassword", "Min value is 4");
             }
+
             else if(register.RepeatPassword.Length > 50)
             {
                 ModelState.AddModelError("RepeatPassword", "Max value is 50");
             }
+
             else if(register.Password != register.RepeatPassword)
             {
                 ModelState.AddModelError("Password", "Passwords are not equal");
                 ModelState.AddModelError("RepeatPassword", "Passwords are not equal");
             }
+
            /*
             //SecreatCombination Validation
             bool IsRight = IssecreatCombinationRight(register);
@@ -142,7 +155,6 @@ namespace OnlineShop.Controllers
             }
             */
 
-
             if (ModelState.IsValid)
             {
                 Manager manager = new Manager
@@ -152,13 +164,13 @@ namespace OnlineShop.Controllers
                     Password = register.Password,
                     DatimeRegister = System.DateTime.Now
                 };
+
                 DbOnlineShop.Managers.Add(manager);
                 DbOnlineShop.SaveChanges();
 
                 Session["Manager"] = manager.Name;
                 return RedirectToAction("Room", "Admin");
             }
-
 
             return View(register);
         }
@@ -174,6 +186,7 @@ namespace OnlineShop.Controllers
                     return true;
                 }
             }
+
             return false;
         }
     }

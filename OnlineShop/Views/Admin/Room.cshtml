@@ -11,6 +11,7 @@
     <title>Room</title>
 </head>
 <body>
+
   <p>Здравствуйте, @ViewBag.manager !</p><span>@using (Html.BeginForm("SignOff", "Admin", FormMethod.Post)) { <input type="submit" value="SignOff"/> }</span>
     <br/>
     <br />
@@ -25,7 +26,6 @@
   <div>@Html.ActionLink("Instraction about using system", "InstractionAboutUsingSystem", "Admin")</div>
   
   <hr/>
-
 
 </body>
 </html>
