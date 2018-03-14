@@ -12,46 +12,28 @@ namespace OnlineShop.Controllers
 {
     public class CustomerController : Controller
     {
-        CookieContainer cookies = new CookieContainer();
+       
         OnlineShopContext onlineDb = new OnlineShopContext();
 
         public ActionResult Cart()
-        {/*
-            if (Request.Cookies["Product"] != null)
-            {
-                int cookieVal = Int32.Parse(Request.Cookies["Product"].Value);
-               
-                var FindLaptop = onlineDb.Laptops.Find(cookieVal);
-
-                ViewBag.LaptopModel = FindLaptop;
-            }
-          */
-            Hashtable table = (Hashtable)cookies.GetType().InvokeMember("m_domainTable",
-                                                                         BindingFlags.NonPublic |
-                                                                         BindingFlags.GetField |
-                                                                         BindingFlags.Instance,
-                                                                         null,
-                                                                         cookies,
-                                                                         new object[] { });
-
-            foreach (var key in table.Keys)
-            {
-                foreach (Cookie cookie in cookies.GetCookies(new Uri(string.Format("http://{0}/", key))))
-                {
-                    return Json(cookie.Name, JsonRequestBehavior.AllowGet);
-                }
-            }
+        {
+           if(Request.Cookies["Laptop"] != null )
+             {
+                int IdVal = Int32.Parse(Request.Cookies["Laptop"].Value);
+                var FoundedModel = onlineDb.Laptops.Find(IdVal);
+                ViewBag.LaptopModel = FoundedModel;
+             }
 
             return View();
         }
 
         [HttpPost]
-        public void AddLaptopToCart(int? Id)
+        public void AddLaptopToCart(int Id)
         {
-            cookies.Add(new Cookie( "Product", Id.ToString(), "/", "localhost:55295"));
-            
-        }
-       
 
+            HttpCookie cookie = new HttpCookie("Laptop", Id.ToString());
+            Response.Cookies.Add(cookie);
+        }
+      
     }
 }

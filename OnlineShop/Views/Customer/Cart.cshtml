@@ -8,3 +8,14 @@
 
 
 
+@{
+    if(Request.Cookies["Laptop"] != null)
+    {
+        <p>@ViewBag.LaptopModel.Title</p>
+        <p><img src="@Url.Content(ViewBag.LaptopModel.MainImagePath)"></p>
+        <p><span>Count:</span><span>1</span></p>
+        <p>Price: @ViewBag.LaptopModel.Price</p>
+    }
+}
+
+
